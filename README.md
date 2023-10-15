@@ -41,6 +41,10 @@ function Remove-EmptyDirectories0 {
 Remove-EmptyDirectories0 -path "$ENV:APPDATA"
 Remove-EmptyDirectories0 -path "$ENV:LOCALAPPDATA"
 Remove-EmptyDirectories0 -path "$env:UserProfile\Documents"
+
+function Clear-History0 {
+    Clear-History; Remove-Item -Force (Get-PSReadlineOption).HistorySavePath; Clear-History; CLS; Exit;
+}
 ```
 ```psm1
 ### Profile Folder Path: "%USERPROFILE%\Documents\WindowsPowerShell"
@@ -63,4 +67,8 @@ function Remove-EmptyDirectories0 {
 Remove-EmptyDirectories0 -path "$ENV:APPDATA"
 Remove-EmptyDirectories0 -path "$ENV:LOCALAPPDATA"
 Remove-EmptyDirectories0 -path "$env:UserProfile\Documents"
+
+function Clear-History0 {
+    Clear-History; Remove-Item -Force (Get-PSReadlineOption).HistorySavePath; Clear-History; CLS; Exit;
+}
 ```
